@@ -93,5 +93,10 @@ namespace SQLiteConsoleApp.DiscogsInsight.Database.Services
         {
             return _connection.UpdateAsync(obj);
         }
+
+        public Task<T> ExecuteScalarAsync<T>(string query, params object[] args)
+        {
+            return _connection.ExecuteScalarAsync<T>(query, args);
+        }
     }
 }
